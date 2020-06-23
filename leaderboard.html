@@ -1,0 +1,48 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+</head>
+<body>
+  <table id="example">
+    <thead>
+          <tr><th class="table_name">Full Name</th><th>Email </th><th>UserName</th><th>Points</th></tr>
+ 
+    </thead>
+    <tbody>
+     </tbody>
+  </table>
+  <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+  <script>
+$("#example").dataTable({
+  "aaData":[
+    ["Michael Obi","mike674@mail.com","@Mike",50],
+    ["Anthony Naomi Jahsom","naomi123@mail.com","@Jahsom",75],
+    ["David Patrick","dave849@mail.com","@techboy",70],
+    ["Betty Frank","betty542@mail.com","@bettygold",60],
+    ["Samuel Young","sammy783@mail.com","@sammy45",55]
+
+  ],
+  "aoColumnDefs":[{
+        "sTitle":"Full Name"
+      , "aTargets": [ "table_name" ]
+
+},{
+        "aTargets": [ 1 ]
+      , "bSortable": true
+      , "mRender": function ( email, type, full )  {
+          return  '<a href="'+email+'">' + email + '</a>';
+      }
+  }]
+});
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
